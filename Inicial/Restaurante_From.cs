@@ -35,7 +35,7 @@ namespace Inicial
             restaurante.MoradaId = morada.Id;
 
             restGest.Restaurante.Add(restaurante);
-            restGest.SaveChanges();
+            restGest.SaveChanges(); 
 
         }
 

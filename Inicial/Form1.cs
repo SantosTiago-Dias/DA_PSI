@@ -22,5 +22,11 @@ namespace Inicial
             Restaurante_From restaurante = new Restaurante_From();
             restaurante.Show();
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            Categorias categoria = new Categorias();
+            categoria.Show();
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Trabalhador.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
