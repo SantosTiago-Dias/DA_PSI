@@ -139,5 +139,10 @@ namespace Inicial
 
             }
         }
+
+        private void Categorias_Load(object sender, EventArgs e)
+        {
+            ler_dados();
+        }
     }
 }

@@ -80,10 +80,10 @@ namespace Inicial
                     restaurante.Nome = txtNome.Text;
                     restaurante.MoradaId = morada.Id;
 
-            restGest.Restaurante.Add(restaurante);
-            restGest.SaveChanges();
+                    restGest.Restaurante.Add(restaurante);
+                    restGest.SaveChanges();
 
-        }
+        
 
                     restaurante.Nome = txtNome.Text;
                     morada.Rua = txtRua.Text;

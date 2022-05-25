@@ -36,10 +36,10 @@ namespace Inicial
             this.label2 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,13 +113,6 @@ namespace Inicial
             this.dgvCategorias.TabIndex = 6;
             this.dgvCategorias.DoubleClick += new System.EventHandler(this.dgvCategorias_DoubleClick);
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(139, 157);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 7;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -136,6 +129,14 @@ namespace Inicial
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(139, 157);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 7;
+            this.txtID.Visible = false;
+            // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +152,7 @@ namespace Inicial
             this.Controls.Add(this.label1);
             this.Name = "Categorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.Categorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
