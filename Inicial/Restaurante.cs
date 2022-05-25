@@ -30,5 +30,9 @@ namespace Inicial
         public virtual ICollection<ItemMenu> ItemMenu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+
+
     }
+
+    
 }
