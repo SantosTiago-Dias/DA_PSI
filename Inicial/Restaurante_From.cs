@@ -69,6 +69,7 @@ namespace Inicial
             {
                 if(txtId.Text=="")
                 {
+                    //Adicionar Restaurante
                     Morada morada = new Morada();
 
                     morada.Rua = txtRua.Text;
@@ -86,11 +87,25 @@ namespace Inicial
 
         
 
+                    
+                }
+                else
+                {
+                    //Editar Restaurante
+                    int id = Convert.ToInt32(txtId.Text);
+                    Restaurante restaurante = restGest.Restaurante.Find(id);
+                    Morada morada = restGest.Morada.Find(restaurante.MoradaId);
+
                     restaurante.Nome = txtNome.Text;
                     morada.Rua = txtRua.Text;
                     morada.Cidade = txtCidade.Text;
                     morada.Cod_Postal = txtCodPostal.Text;
+
                     restGest.SaveChanges();
+                    restGest.SaveChanges();
+                    limpar_txt();
+                    ler_dados();
+                    btnAddFunc.Text = "Adiconar Restaurante";
                 }
 
                 
@@ -161,6 +176,10 @@ namespace Inicial
 
                 Funcionarios_Form funcionarios = new Funcionarios_Form();
                 funcionarios.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tem de selecionar algum restaurante primeiro");
             }
         }
     }
