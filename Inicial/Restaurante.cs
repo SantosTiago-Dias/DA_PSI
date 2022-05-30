@@ -19,6 +19,7 @@ namespace Inicial
         {
             this.ItemMenu = new HashSet<ItemMenu>();
             this.Pedido = new HashSet<Pedido>();
+            this.Trabalhador = new HashSet<Trabalhador>();
         }
     
         public int Id { get; set; }
@@ -30,9 +31,7 @@ namespace Inicial
         public virtual ICollection<ItemMenu> ItemMenu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
-
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Trabalhador> Trabalhador { get; set; }
     }
-
-    
 }

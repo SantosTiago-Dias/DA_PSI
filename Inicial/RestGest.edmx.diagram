@@ -7,7 +7,7 @@
       <Diagram DiagramId="8f629cbf353245f2a83a46aa5b182994" Name="Diagram1" >
         <EntityTypeShape EntityType="RestGest.Morada" Width="1.5" PointX="4.375" PointY="1.125" />
         <EntityTypeShape EntityType="RestGest.Pessoa" Width="1.5" PointX="1.375" PointY="1.125" />
-        <EntityTypeShape EntityType="RestGest.Restaurante" Width="1.5" PointX="9" PointY="1.125" />
+        <EntityTypeShape EntityType="RestGest.Restaurante" Width="1.5" PointX="8.125" PointY="0.875" />
         <EntityTypeShape EntityType="RestGest.Cliente" Width="1.5" PointX="0.625" PointY="3.5" />
         <EntityTypeShape EntityType="RestGest.Trabalhador" Width="1.5" PointX="2.375" PointY="3.5" />
         <EntityTypeShape EntityType="RestGest.ItemMenu" Width="1.5" PointX="9" PointY="3.875" />
@@ -29,6 +29,7 @@
         <AssociationConnector Association="RestGest.PedidoEstado" />
         <AssociationConnector Association="RestGest.PagamentoMetodoPagamento" />
         <AssociationConnector Association="RestGest.PagamentoPedido" />
+        <AssociationConnector Association="RestGest.TrabalhadorRestaurante" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

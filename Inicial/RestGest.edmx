@@ -71,6 +71,10 @@
       <End Role="Pagamento" EntitySet="Pagamento" />
       <End Role="Pedido" EntitySet="Pedido" />
     </AssociationSet>
+    <AssociationSet Name="TrabalhadorRestaurante" Association="RestGest.Store.TrabalhadorRestaurante">
+      <End Role="Trabalhador" EntitySet="Pessoa_Trabalhador" />
+      <End Role="Restaurante" EntitySet="Restaurante" />
+    </AssociationSet>
     <AssociationSet Name="FK_Cliente_inherits_Pessoa" Association="RestGest.Store.FK_Cliente_inherits_Pessoa">
       <End Role="Pessoa" EntitySet="Pessoa" />
       <End Role="Cliente" EntitySet="Pessoa_Cliente" />
@@ -175,6 +179,7 @@
     </Key>
     <Property Name="Salario" Type="decimal" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RestauranteId" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RestauranteItemMenu">
@@ -298,6 +303,18 @@
       </Principal>
       <Dependent Role="Pagamento">
         <PropertyRef Name="PedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TrabalhadorRestaurante">
+    <End Role="Trabalhador" Type="RestGest.Store.Pessoa_Trabalhador" Multiplicity="*" />
+    <End Role="Restaurante" Type="RestGest.Store.Restaurante" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurante">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabalhador">
+        <PropertyRef Name="RestauranteId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -435,6 +452,10 @@
             <End Role="Pagamento" EntitySet="Pagamento" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
+          <AssociationSet Name="TrabalhadorRestaurante" Association="RestGest.TrabalhadorRestaurante">
+            <End Role="Trabalhador" EntitySet="Pessoa" />
+            <End Role="Restaurante" EntitySet="Restaurante" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Morada">
           <Key>
@@ -465,6 +486,7 @@
           <Property Name="MoradaId" Type="Int32" Nullable="true" />
           <NavigationProperty Name="ItemMenu" Relationship="RestGest.RestauranteItemMenu" FromRole="Restaurante" ToRole="ItemMenu" />
           <NavigationProperty Name="Pedido" Relationship="RestGest.PedidoRestaurante" FromRole="Restaurante" ToRole="Pedido" />
+          <NavigationProperty Name="Trabalhador" Relationship="RestGest.TrabalhadorRestaurante" FromRole="Restaurante" ToRole="Trabalhador" />
         </EntityType>
         <EntityType Name="Cliente" BaseType="RestGest.Pessoa">
           <Property Name="TotalGasto" Type="Decimal" Nullable="false" />
@@ -475,6 +497,8 @@
           <Property Name="Salario" Type="Decimal" Nullable="false" />
           <Property Name="Posicao" Type="String" Nullable="false" />
           <NavigationProperty Name="Pedido" Relationship="RestGest.TrabalhadorPedido" FromRole="Trabalhador" ToRole="Pedido" />
+          <NavigationProperty Name="Restaurante" Relationship="RestGest.TrabalhadorRestaurante" FromRole="Trabalhador" ToRole="Restaurante" />
+          <Property Name="RestauranteId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ItemMenu">
           <Key>
@@ -661,6 +685,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="TrabalhadorRestaurante">
+          <End Type="RestGest.Trabalhador" Role="Trabalhador" Multiplicity="*" />
+          <End Type="RestGest.Restaurante" Role="Restaurante" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trabalhador">
+              <PropertyRef Name="RestauranteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -698,6 +734,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
+          <ScalarProperty Name="RestauranteId" ColumnName="RestauranteId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

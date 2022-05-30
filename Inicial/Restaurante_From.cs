@@ -13,6 +13,7 @@ namespace Inicial
     public partial class Restaurante_From : Form
     {
         public RestGestContainer restGest;
+        public static string id_restaurante = "";
         public Restaurante_From()
         {
             InitializeComponent();
@@ -100,6 +101,7 @@ namespace Inicial
             }
 
             ler_dados();
+            limpar_txt();
         }
 
         public void limpar_txt()
@@ -149,6 +151,17 @@ namespace Inicial
             }
             
             
+        }
+
+        private void btnAddFunc_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text != "")
+            {
+                id_restaurante = txtId.Text;
+
+                Funcionarios_Form funcionarios = new Funcionarios_Form();
+                funcionarios.Show();
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/23/2022 23:06:21
+-- Date Created: 05/30/2022 14:56:52
 -- Generated from EDMX file: C:\Users\tiago\Desktop\Ipl_Escola\Desenvolvimento de aplicações-C#\Trabalho DA v2\Inicial\RestGest.edmx
 -- --------------------------------------------------
 
@@ -204,6 +204,7 @@ GO
 CREATE TABLE [dbo].[Pessoa_Trabalhador] (
     [Salario] decimal(18,0)  NOT NULL,
     [Posicao] nvarchar(max)  NOT NULL,
+    [RestauranteId] int  NOT NULL,
     [Id] int  NOT NULL
 );
 GO
@@ -489,6 +490,21 @@ GO
 CREATE INDEX [IX_FK_PagamentoPedido]
 ON [dbo].[Pagamento]
     ([PedidoId]);
+GO
+
+-- Creating foreign key on [RestauranteId] in table 'Pessoa_Trabalhador'
+ALTER TABLE [dbo].[Pessoa_Trabalhador]
+ADD CONSTRAINT [FK_TrabalhadorRestaurante]
+    FOREIGN KEY ([RestauranteId])
+    REFERENCES [dbo].[Restaurante]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TrabalhadorRestaurante'
+CREATE INDEX [IX_FK_TrabalhadorRestaurante]
+ON [dbo].[Pessoa_Trabalhador]
+    ([RestauranteId]);
 GO
 
 -- Creating foreign key on [Id] in table 'Pessoa_Cliente'

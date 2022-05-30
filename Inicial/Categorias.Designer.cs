@@ -111,6 +111,7 @@ namespace Inicial
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.Size = new System.Drawing.Size(257, 248);
             this.dgvCategorias.TabIndex = 6;
+            this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             this.dgvCategorias.DoubleClick += new System.EventHandler(this.dgvCategorias_DoubleClick);
             // 
             // ID

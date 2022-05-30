@@ -22,8 +22,10 @@ namespace Inicial
     
         public decimal Salario { get; set; }
         public string Posicao { get; set; }
+        public int RestauranteId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+        public virtual Restaurante Restaurante { get; set; }
     }
 }

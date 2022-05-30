@@ -33,6 +33,11 @@
             this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.btnaddRestaurante = new System.Windows.Forms.Button();
             this.dgRestaurante = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,12 +45,8 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAddFunc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRestaurante)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +96,40 @@
             this.dgRestaurante.Size = new System.Drawing.Size(494, 206);
             this.dgRestaurante.TabIndex = 4;
             this.dgRestaurante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRestaurante_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Id";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome Restaurante";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 150;
+            // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            this.cidade.Width = 150;
+            // 
+            // morada
+            // 
+            this.morada.HeaderText = "Morada";
+            this.morada.Name = "morada";
+            this.morada.ReadOnly = true;
+            this.morada.Width = 150;
+            // 
+            // Cod_Postal
+            // 
+            this.Cod_Postal.HeaderText = "Codigo Postal";
+            this.Cod_Postal.Name = "Cod_Postal";
+            this.Cod_Postal.ReadOnly = true;
+            this.Cod_Postal.Visible = false;
             // 
             // label1
             // 
@@ -162,40 +197,6 @@
             this.txtId.TabIndex = 11;
             this.txtId.Visible = false;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "Id";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome Restaurante";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.Width = 150;
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            this.cidade.ReadOnly = true;
-            this.cidade.Width = 150;
-            // 
-            // morada
-            // 
-            this.morada.HeaderText = "Morada";
-            this.morada.Name = "morada";
-            this.morada.ReadOnly = true;
-            this.morada.Width = 150;
-            // 
-            // Cod_Postal
-            // 
-            this.Cod_Postal.HeaderText = "Codigo Postal";
-            this.Cod_Postal.Name = "Cod_Postal";
-            this.Cod_Postal.ReadOnly = true;
-            this.Cod_Postal.Visible = false;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(537, 242);
@@ -206,11 +207,22 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnAddFunc
+            // 
+            this.btnAddFunc.Location = new System.Drawing.Point(380, 275);
+            this.btnAddFunc.Name = "btnAddFunc";
+            this.btnAddFunc.Size = new System.Drawing.Size(126, 23);
+            this.btnAddFunc.TabIndex = 13;
+            this.btnAddFunc.Text = "Adicionar Funcionario";
+            this.btnAddFunc.UseVisualStyleBackColor = true;
+            this.btnAddFunc.Click += new System.EventHandler(this.btnAddFunc_Click);
+            // 
             // Restaurante_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 311);
+            this.ClientSize = new System.Drawing.Size(716, 310);
+            this.Controls.Add(this.btnAddFunc);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
@@ -253,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn morada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Postal;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAddFunc;
     }
 }

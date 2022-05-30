@@ -96,7 +96,7 @@ namespace Inicial
                          estadoDV=dados.Ativo
                      };
            
-            MessageBox.Show(tabela.Count().ToString());
+           
           //  Array arr = tabela.ToArray();
             foreach (var cat in tabela)
             {
@@ -104,9 +104,18 @@ namespace Inicial
 
                 dgvCategorias.Rows[i].Cells["ID"].Value = cat.idCat;
                 dgvCategorias.Rows[i].Cells["Categoria"].Value = cat.nomeCat;
-                dgvCategorias.Rows[i].Cells["Estado"].Value = cat.estadoDV;
-           
-
+                if(cat.estadoDV==true)
+                {
+                    dgvCategorias.Rows[i].Cells["Estado"].Value = "Ativo";
+                    dgvCategorias.Rows[i].Cells["Estado"].Style.BackColor = Color.DarkGreen;
+                    dgvCategorias.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                }
+                else
+                {
+                    dgvCategorias.Rows[i].Cells["Estado"].Value = "Desativo";
+                    dgvCategorias.Rows[i].Cells["Estado"].Style.BackColor = Color.DarkRed;
+                    dgvCategorias.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                }
                 i++;
             }
         }
@@ -143,6 +152,11 @@ namespace Inicial
         private void Categorias_Load(object sender, EventArgs e)
         {
             ler_dados();
+        }
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
