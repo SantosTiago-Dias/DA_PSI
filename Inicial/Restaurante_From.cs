@@ -13,7 +13,7 @@ namespace Inicial
     public partial class Restaurante_From : Form
     {
         public RestGestContainer restGest;
-        public static string id_restaurante = "";
+        
         public Restaurante_From()
         {
             InitializeComponent();
@@ -149,7 +149,7 @@ namespace Inicial
         {
             if (txtId.Text != "") 
             {
-                DialogResult resposta = MessageBox.Show("Deseja apagar os dados?", "Pergunta", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult resposta = MessageBox.Show("Deseja eliminar o Restaurante?", "Pergunta", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (resposta == DialogResult.Yes)
                 {

@@ -1,7 +1,7 @@
 ﻿
 namespace Inicial
 {
-    partial class Categorias
+    partial class Categorias_Form
     {
         /// <summary>
         /// Required designer variable.

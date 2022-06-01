@@ -43,7 +43,7 @@ namespace Inicial
                     trabalhador.RestauranteId = Convert.ToInt32(lblId.Text);
                     trabalhador.Telemovel = Convert.ToInt32(txtTelemovel.Text);
                     trabalhador.Salario = Convert.ToDecimal(salario.Replace('.', ','));
-                    trabalhador.MoradaId = morada.Id;
+                   
 
                     restGest.Pessoa.Add(trabalhador);
 
@@ -95,7 +95,7 @@ namespace Inicial
 
         private void dgFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //limpar_txt();
+            limpar_txt();
             btnaddFunc.Text = "Editar Funcionario";
             int row = dgFuncionario.CurrentRow.Index;
             lblIdFunc.Text = dgFuncionario.Rows[row].Cells["ID"].Value.ToString();
@@ -164,6 +164,28 @@ namespace Inicial
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpar_txt();
+            btnaddFunc.Text = "Adicionar Funcionario";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lblIdFunc.Text != "")
+            {
+                DialogResult resposta = MessageBox.Show("Deseja eliminar o Trabalhador?", "Pergunta", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(lblIdFunc.Text);
+                    Trabalhador trabalhador = (Trabalhador)restGest.Pessoa.Find(id);
+                    Morada morada = restGest.Morada.Find(trabalhador.MoradaId);
+
+                    restGest.Morada.Remove(morada);
+                    restGest.Pessoa.Remove(trabalhador);
+                    restGest.SaveChanges();
+                    limpar_txt();
+                    ler_dados();
+                }
+            }
         }
     }
 }

@@ -58,14 +58,20 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
-    <Compile Include="Categorias.cs">
+    <Compile Include="Categorias_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Categorias.Designer.cs">
-      <DependentUpon>Categorias.cs</DependentUpon>
+    <Compile Include="Categorias_Form.Designer.cs">
+      <DependentUpon>Categorias_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente_Form.Designer.cs">
+      <DependentUpon>Cliente_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
@@ -129,8 +135,11 @@
     <Compile Include="Trabalhador.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Categorias.resx">
-      <DependentUpon>Categorias.cs</DependentUpon>
+    <EmbeddedResource Include="Categorias_Form.resx">
+      <DependentUpon>Categorias_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente_Form.resx">
+      <DependentUpon>Cliente_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

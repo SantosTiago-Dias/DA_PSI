@@ -73,6 +73,7 @@
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar Funcionario";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCancelar
             // 
@@ -352,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 423);
+            this.ClientSize = new System.Drawing.Size(1005, 361);
             this.Controls.Add(this.cmbRest);
             this.Controls.Add(this.lblIdMorada);
             this.Controls.Add(this.lblIdFunc);

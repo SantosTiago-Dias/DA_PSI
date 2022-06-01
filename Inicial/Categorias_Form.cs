@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Inicial
 {
-    public partial class Categorias : Form
+    public partial class Categorias_Form : Form
     {
         public RestGestContainer restGest;
-        public Categorias()
+        public Categorias_Form()
         {
             InitializeComponent();
             restGest = new RestGestContainer();
