@@ -118,7 +118,7 @@
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Fotografia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Ingredientes" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Preco" Type="int" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" />
     <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="CategoriaId" Type="int" Nullable="false" />
   </EntityType>
@@ -508,7 +508,7 @@
           <Property Name="Nome" Type="String" Nullable="false" />
           <Property Name="Fotografia" Type="String" Nullable="false" />
           <Property Name="Ingredientes" Type="String" Nullable="false" />
-          <Property Name="Preco" Type="Int32" Nullable="false" />
+          <Property Name="Preco" Type="Decimal" Nullable="false" />
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurante" Relationship="RestGest.RestauranteItemMenu" FromRole="ItemMenu" ToRole="Restaurante" />
           <NavigationProperty Name="Categoria" Relationship="RestGest.ItemMenuCategoria" FromRole="ItemMenu" ToRole="Categoria" />

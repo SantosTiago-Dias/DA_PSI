@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/30/2022 14:56:52
+-- Date Created: 06/01/2022 16:26:45
 -- Generated from EDMX file: C:\Users\tiago\Desktop\Ipl_Escola\Desenvolvimento de aplicações-C#\Trabalho DA v2\Inicial\RestGest.edmx
 -- --------------------------------------------------
 
@@ -55,6 +55,9 @@ IF OBJECT_ID(N'[dbo].[FK_PagamentoMetodoPagamento]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PagamentoPedido]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Pagamento] DROP CONSTRAINT [FK_PagamentoPedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TrabalhadorRestaurante]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pessoa_Trabalhador] DROP CONSTRAINT [FK_TrabalhadorRestaurante];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Cliente_inherits_Pessoa]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Pessoa_Cliente] DROP CONSTRAINT [FK_Cliente_inherits_Pessoa];
@@ -143,7 +146,7 @@ CREATE TABLE [dbo].[ItemMenu] (
     [Nome] nvarchar(max)  NOT NULL,
     [Fotografia] nvarchar(max)  NOT NULL,
     [Ingredientes] nvarchar(max)  NOT NULL,
-    [Preco] int  NOT NULL,
+    [Preco] decimal(18,0)  NOT NULL,
     [Ativo] bit  NOT NULL,
     [CategoriaId] int  NOT NULL
 );
