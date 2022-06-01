@@ -170,17 +170,9 @@ namespace Inicial
 
         private void btnAddFunc_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "")
-            {
-                id_restaurante = txtId.Text;
-
-                Funcionarios_Form funcionarios = new Funcionarios_Form();
-                funcionarios.Show();
-            }
-            else
-            {
-                MessageBox.Show("Tem de selecionar algum restaurante primeiro");
-            }
+            Funcionarios_Form funcionarios = new Funcionarios_Form();
+            funcionarios.Show();
+            
         }
     }
 }

@@ -38,6 +38,7 @@
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Rest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,7 +91,8 @@
             this.nome,
             this.cidade,
             this.morada,
-            this.Cod_Postal});
+            this.Cod_Postal,
+            this.id_Rest});
             this.dgRestaurante.Location = new System.Drawing.Point(12, 38);
             this.dgRestaurante.Name = "dgRestaurante";
             this.dgRestaurante.Size = new System.Drawing.Size(494, 206);
@@ -130,6 +132,12 @@
             this.Cod_Postal.Name = "Cod_Postal";
             this.Cod_Postal.ReadOnly = true;
             this.Cod_Postal.Visible = false;
+            // 
+            // id_Rest
+            // 
+            this.id_Rest.HeaderText = "id_Rest";
+            this.id_Rest.Name = "id_Rest";
+            this.id_Rest.Visible = false;
             // 
             // label1
             // 
@@ -213,7 +221,7 @@
             this.btnAddFunc.Name = "btnAddFunc";
             this.btnAddFunc.Size = new System.Drawing.Size(126, 23);
             this.btnAddFunc.TabIndex = 13;
-            this.btnAddFunc.Text = "Adicionar Funcionario";
+            this.btnAddFunc.Text = "Funcionarios";
             this.btnAddFunc.UseVisualStyleBackColor = true;
             this.btnAddFunc.Click += new System.EventHandler(this.btnAddFunc_Click);
             // 
@@ -266,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Postal;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAddFunc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Rest;
     }
 }

@@ -46,16 +46,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblNomeRestaurante = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.dgFuncionario = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_rest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_Funcinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_restaurante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblIdFunc = new System.Windows.Forms.Label();
+            this.lblIdMorada = new System.Windows.Forms.Label();
+            this.cmbRest = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +82,7 @@
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label4
             // 
@@ -216,31 +223,29 @@
             this.label8.Text = "Restaurante";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNomeRestaurante
-            // 
-            this.lblNomeRestaurante.Location = new System.Drawing.Point(870, 241);
-            this.lblNomeRestaurante.Name = "lblNomeRestaurante";
-            this.lblNomeRestaurante.Size = new System.Drawing.Size(100, 23);
-            this.lblNomeRestaurante.TabIndex = 33;
-            // 
             // lblId
             // 
-            this.lblId.Location = new System.Drawing.Point(954, 234);
+            this.lblId.Location = new System.Drawing.Point(979, 245);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(46, 17);
             this.lblId.TabIndex = 34;
+            this.lblId.Visible = false;
             // 
             // dgFuncionario
             // 
             this.dgFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.id_rest,
             this.nome_Funcinario,
             this.tele,
             this.posicao,
             this.salario,
             this.nome_restaurante,
-            this.cidade});
+            this.cidade,
+            this.cod_Postal,
+            this.rua,
+            this.id_morada});
             this.dgFuncionario.Location = new System.Drawing.Point(12, 56);
             this.dgFuncionario.Name = "dgFuncionario";
             this.dgFuncionario.Size = new System.Drawing.Size(743, 206);
@@ -253,15 +258,23 @@
             this.ID.Name = "ID";
             this.ID.Visible = false;
             // 
+            // id_rest
+            // 
+            this.id_rest.HeaderText = "id_rest";
+            this.id_rest.Name = "id_rest";
+            this.id_rest.Visible = false;
+            // 
             // nome_Funcinario
             // 
             this.nome_Funcinario.HeaderText = "Nome";
             this.nome_Funcinario.Name = "nome_Funcinario";
+            this.nome_Funcinario.ReadOnly = true;
             // 
             // tele
             // 
             this.tele.HeaderText = "Telemovel";
             this.tele.Name = "tele";
+            this.tele.ReadOnly = true;
             // 
             // posicao
             // 
@@ -289,14 +302,62 @@
             this.cidade.ReadOnly = true;
             this.cidade.Width = 150;
             // 
+            // cod_Postal
+            // 
+            this.cod_Postal.HeaderText = "Codigo Postal";
+            this.cod_Postal.Name = "cod_Postal";
+            this.cod_Postal.ReadOnly = true;
+            this.cod_Postal.Visible = false;
+            // 
+            // rua
+            // 
+            this.rua.HeaderText = "Rua";
+            this.rua.Name = "rua";
+            this.rua.ReadOnly = true;
+            this.rua.Visible = false;
+            // 
+            // id_morada
+            // 
+            this.id_morada.HeaderText = "id_morada";
+            this.id_morada.Name = "id_morada";
+            this.id_morada.Visible = false;
+            // 
+            // lblIdFunc
+            // 
+            this.lblIdFunc.AutoSize = true;
+            this.lblIdFunc.Location = new System.Drawing.Point(870, 27);
+            this.lblIdFunc.Name = "lblIdFunc";
+            this.lblIdFunc.Size = new System.Drawing.Size(0, 13);
+            this.lblIdFunc.TabIndex = 36;
+            this.lblIdFunc.Visible = false;
+            // 
+            // lblIdMorada
+            // 
+            this.lblIdMorada.Location = new System.Drawing.Point(979, 132);
+            this.lblIdMorada.Name = "lblIdMorada";
+            this.lblIdMorada.Size = new System.Drawing.Size(46, 17);
+            this.lblIdMorada.TabIndex = 37;
+            this.lblIdMorada.Visible = false;
+            // 
+            // cmbRest
+            // 
+            this.cmbRest.FormattingEnabled = true;
+            this.cmbRest.Location = new System.Drawing.Point(873, 238);
+            this.cmbRest.Name = "cmbRest";
+            this.cmbRest.Size = new System.Drawing.Size(100, 21);
+            this.cmbRest.TabIndex = 38;
+            this.cmbRest.SelectedIndexChanged += new System.EventHandler(this.cmbRest_SelectedIndexChanged);
+            // 
             // Funcionarios_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 423);
+            this.Controls.Add(this.cmbRest);
+            this.Controls.Add(this.lblIdMorada);
+            this.Controls.Add(this.lblIdFunc);
             this.Controls.Add(this.dgFuncionario);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.lblNomeRestaurante);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPosicaoFunc);
@@ -344,15 +405,21 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblNomeRestaurante;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.DataGridView dgFuncionario;
+        private System.Windows.Forms.Label lblIdFunc;
+        private System.Windows.Forms.Label lblIdMorada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_rest;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_Funcinario;
         private System.Windows.Forms.DataGridViewTextBoxColumn tele;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicao;
         private System.Windows.Forms.DataGridViewTextBoxColumn salario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_restaurante;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_Postal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_morada;
+        private System.Windows.Forms.ComboBox cmbRest;
     }
 }
