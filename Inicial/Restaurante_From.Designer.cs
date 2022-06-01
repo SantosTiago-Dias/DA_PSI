@@ -48,12 +48,13 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAddFunc = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRestaurante)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(599, 51);
+            this.txtCidade.Location = new System.Drawing.Point(599, 106);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(100, 20);
             this.txtCidade.TabIndex = 0;
@@ -61,14 +62,14 @@
             // 
             // txtRua
             // 
-            this.txtRua.Location = new System.Drawing.Point(599, 132);
+            this.txtRua.Location = new System.Drawing.Point(599, 187);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(100, 20);
             this.txtRua.TabIndex = 1;
             // 
             // txtCodPostal
             // 
-            this.txtCodPostal.Location = new System.Drawing.Point(599, 93);
+            this.txtCodPostal.Location = new System.Drawing.Point(599, 148);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodPostal.TabIndex = 2;
@@ -142,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(534, 51);
+            this.label1.Location = new System.Drawing.Point(534, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 5;
@@ -152,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(534, 132);
+            this.label2.Location = new System.Drawing.Point(534, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 6;
@@ -162,7 +163,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(534, 93);
+            this.label3.Location = new System.Drawing.Point(534, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 7;
@@ -172,7 +173,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(534, 180);
+            this.label4.Location = new System.Drawing.Point(534, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 9;
@@ -181,7 +182,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(599, 173);
+            this.txtNome.Location = new System.Drawing.Point(599, 65);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 8;
@@ -225,11 +226,22 @@
             this.btnAddFunc.UseVisualStyleBackColor = true;
             this.btnAddFunc.Click += new System.EventHandler(this.btnAddFunc_Click);
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Location = new System.Drawing.Point(248, 275);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(126, 23);
+            this.btnMenu.TabIndex = 14;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // Restaurante_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 310);
+            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnAddFunc);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtId);
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAddFunc;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Rest;
+        private System.Windows.Forms.Button btnMenu;
     }
 }

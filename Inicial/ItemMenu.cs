@@ -25,7 +25,7 @@ namespace Inicial
         public string Nome { get; set; }
         public string Fotografia { get; set; }
         public string Ingredientes { get; set; }
-        public int Preco { get; set; }
+        public decimal Preco { get; set; }
         public bool Ativo { get; set; }
         public int CategoriaId { get; set; }
     

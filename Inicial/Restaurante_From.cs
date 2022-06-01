@@ -13,7 +13,7 @@ namespace Inicial
     public partial class Restaurante_From : Form
     {
         public RestGestContainer restGest;
-        
+        public static int id;//vai enviar o id do restaurante para o menu
         public Restaurante_From()
         {
             InitializeComponent();
@@ -173,6 +173,20 @@ namespace Inicial
             Funcionarios_Form funcionarios = new Funcionarios_Form();
             funcionarios.Show();
             
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text != "")
+            {
+                id = Convert.ToInt32(txtId.Text);
+                Item_Menu itemMenu = new Item_Menu();
+                itemMenu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um restaurante");
+            }
         }
     }
 }

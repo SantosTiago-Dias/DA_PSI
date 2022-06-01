@@ -43,7 +43,7 @@ namespace Inicial
                     trabalhador.RestauranteId = Convert.ToInt32(lblId.Text);
                     trabalhador.Telemovel = Convert.ToInt32(txtTelemovel.Text);
                     trabalhador.Salario = Convert.ToDecimal(salario.Replace('.', ','));
-                   
+                    trabalhador.MoradaId = morada.Id;
 
                     restGest.Pessoa.Add(trabalhador);
 
@@ -63,7 +63,7 @@ namespace Inicial
                     trabalhador.RestauranteId = Convert.ToInt32(lblId.Text);
                     trabalhador.Telemovel = Convert.ToInt32(txtTelemovel.Text);
                     trabalhador.Salario = Convert.ToDecimal(salario.Replace('.', ','));
-                    trabalhador.MoradaId = morada.Id;
+                    
 
                     restGest.SaveChanges();
                 }
