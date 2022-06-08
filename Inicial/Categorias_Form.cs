@@ -49,6 +49,7 @@ namespace Inicial
 
                 restGest.Categoria.Add(categoria);
                 restGest.SaveChanges();
+                ler_dados();
           
             }
             else {
