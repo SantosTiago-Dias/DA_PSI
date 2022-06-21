@@ -84,10 +84,7 @@ namespace Inicial
 
                     restGest.Restaurante.Add(restaurante);
                     restGest.SaveChanges();
-
-        
-
-                    
+                   
                 }
                 else
                 {
@@ -101,7 +98,7 @@ namespace Inicial
                     morada.Cidade = txtCidade.Text;
                     morada.Cod_Postal = txtCodPostal.Text;
 
-                    restGest.SaveChanges();
+                    
                     restGest.SaveChanges();
                     limpar_txt();
                     ler_dados();
