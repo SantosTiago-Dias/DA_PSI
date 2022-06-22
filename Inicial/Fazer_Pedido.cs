@@ -264,5 +264,11 @@ namespace Inicial
             }
             ler_dados();
         }
+
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            Pagamento_Form pagamento = new Pagamento_Form();
+            pagamento.Show();
+        }
     }
 }

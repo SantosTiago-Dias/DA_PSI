@@ -195,5 +195,20 @@ namespace Inicial
                 MessageBox.Show("Selecione um restaurante");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (txtId.Text != "")
+            {
+                id_restaurante = Convert.ToInt32(txtId.Text);
+                MetedoPagamento metodoPagamento = new MetedoPagamento();
+                metodoPagamento.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um restaurante");
+            }
+        }
     }
 }

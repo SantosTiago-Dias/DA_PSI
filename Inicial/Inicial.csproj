@@ -103,6 +103,12 @@
     <Compile Include="Item_Menu.Designer.cs">
       <DependentUpon>Item_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetedoPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetedoPagamento.Designer.cs">
+      <DependentUpon>MetedoPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodoPagamento.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Pagamento.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pagamento_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagamento_Form.Designer.cs">
+      <DependentUpon>Pagamento_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
@@ -164,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Item_Menu.resx">
       <DependentUpon>Item_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetedoPagamento.resx">
+      <DependentUpon>MetedoPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagamento_Form.resx">
+      <DependentUpon>Pagamento_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

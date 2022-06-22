@@ -49,6 +49,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAddFunc = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnMetodosPagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRestaurante)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,11 +237,22 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnMetodosPagamento
+            // 
+            this.btnMetodosPagamento.Location = new System.Drawing.Point(97, 276);
+            this.btnMetodosPagamento.Name = "btnMetodosPagamento";
+            this.btnMetodosPagamento.Size = new System.Drawing.Size(135, 23);
+            this.btnMetodosPagamento.TabIndex = 15;
+            this.btnMetodosPagamento.Text = "Metodos de Pagamento";
+            this.btnMetodosPagamento.UseVisualStyleBackColor = true;
+            this.btnMetodosPagamento.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Restaurante_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 310);
+            this.Controls.Add(this.btnMetodosPagamento);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnAddFunc);
             this.Controls.Add(this.btnEliminar);
@@ -288,5 +300,6 @@
         private System.Windows.Forms.Button btnAddFunc;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Rest;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnMetodosPagamento;
     }
 }

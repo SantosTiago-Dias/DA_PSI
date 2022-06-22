@@ -56,6 +56,7 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAvancar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnPagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -254,32 +255,38 @@
             // 
             this.nPedido.HeaderText = "Pedido N";
             this.nPedido.Name = "nPedido";
+            this.nPedido.ReadOnly = true;
             // 
             // cliente
             // 
             this.cliente.HeaderText = "Nome Cliente";
             this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
             // 
             // funcionario
             // 
             this.funcionario.HeaderText = "Nome Funcionario";
             this.funcionario.Name = "funcionario";
+            this.funcionario.ReadOnly = true;
             // 
             // pedido
             // 
             this.pedido.HeaderText = "Pedido";
             this.pedido.Name = "pedido";
+            this.pedido.ReadOnly = true;
             this.pedido.Width = 270;
             // 
             // valortotal
             // 
             this.valortotal.HeaderText = "Valor Total";
             this.valortotal.Name = "valortotal";
+            this.valortotal.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // btnAvancar
             // 
@@ -301,11 +308,22 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnPagamento
+            // 
+            this.btnPagamento.Location = new System.Drawing.Point(37, 402);
+            this.btnPagamento.Name = "btnPagamento";
+            this.btnPagamento.Size = new System.Drawing.Size(102, 23);
+            this.btnPagamento.TabIndex = 27;
+            this.btnPagamento.Text = "Pagamentos";
+            this.btnPagamento.UseVisualStyleBackColor = true;
+            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
+            // 
             // Fazer_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 450);
+            this.Controls.Add(this.btnPagamento);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.dgPedido);
@@ -367,5 +385,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Button btnAvancar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnPagamento;
     }
 }
