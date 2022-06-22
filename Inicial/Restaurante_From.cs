@@ -30,19 +30,16 @@ namespace Inicial
             dgRestaurante.Refresh();
             int i = 0;
             // query para dar join das duas tabelas e as juntar os campos de ambas
-            var query =(
-                     from Restaurante in restGest.Restaurante
-                     join Morada in restGest.Morada on Restaurante.MoradaId equals Morada.Id
-                     select new { id=Restaurante.Id, Nome = Restaurante.Nome, Cidade = Morada.Cidade, Rua = Morada.Rua, Cod_Postal= Morada.Cod_Postal }).ToList();
+            List<Restaurante> restaurantes = restGest.Restaurante.ToList();
             //foreach para percorrer os campos do query
-            foreach (var res in query)
+            foreach (var res in restaurantes)
             {
                 dgRestaurante.Rows.Add();
-                dgRestaurante.Rows[i].Cells["ID"].Value = res.id;
+                dgRestaurante.Rows[i].Cells["ID"].Value = res.Id;
                 dgRestaurante.Rows[i].Cells["nome"].Value = res.Nome;
-                dgRestaurante.Rows[i].Cells["cidade"].Value = res.Cidade;
-                dgRestaurante.Rows[i].Cells["morada"].Value = res.Rua;
-                dgRestaurante.Rows[i].Cells["Cod_Postal"].Value = res.Cod_Postal;
+                dgRestaurante.Rows[i].Cells["cidade"].Value = res.Morada.Cidade;
+                dgRestaurante.Rows[i].Cells["morada"].Value = res.Morada.Rua;
+                dgRestaurante.Rows[i].Cells["Cod_Postal"].Value = res.Morada.Cod_Postal;
                 i++;
             }
             
@@ -209,6 +206,12 @@ namespace Inicial
             {
                 MessageBox.Show("Selecione um restaurante");
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Categorias_Form categoria = new Categorias_Form();
+            categoria.Show();
         }
     }
 }

@@ -25,8 +25,7 @@ namespace Inicial
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-            Categorias_Form categoria = new Categorias_Form();
-            categoria.Show();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

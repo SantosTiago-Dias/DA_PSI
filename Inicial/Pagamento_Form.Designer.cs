@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgPagamento = new System.Windows.Forms.DataGridView();
             this.cmbMetedoPagamento = new System.Windows.Forms.ComboBox();
             this.btnRegistar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,16 +36,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbPedido = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Nmesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faltapagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metedoPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPagamento)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgPagamento
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(363, 235);
-            this.dataGridView1.TabIndex = 0;
+            this.dgPagamento.AllowUserToAddRows = false;
+            this.dgPagamento.AllowUserToDeleteRows = false;
+            this.dgPagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPagamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nmesa,
+            this.valor_total,
+            this.faltapagar,
+            this.metedoPagamento});
+            this.dgPagamento.Location = new System.Drawing.Point(26, 12);
+            this.dgPagamento.Name = "dgPagamento";
+            this.dgPagamento.ReadOnly = true;
+            this.dgPagamento.Size = new System.Drawing.Size(448, 235);
+            this.dgPagamento.TabIndex = 0;
             // 
             // cmbMetedoPagamento
             // 
@@ -57,9 +69,9 @@
             // 
             // btnRegistar
             // 
-            this.btnRegistar.Location = new System.Drawing.Point(664, 178);
+            this.btnRegistar.Location = new System.Drawing.Point(643, 174);
             this.btnRegistar.Name = "btnRegistar";
-            this.btnRegistar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistar.Size = new System.Drawing.Size(131, 23);
             this.btnRegistar.TabIndex = 2;
             this.btnRegistar.Text = "Registar Pagamento";
             this.btnRegistar.UseVisualStyleBackColor = true;
@@ -107,6 +119,28 @@
             this.cmbPedido.Size = new System.Drawing.Size(121, 21);
             this.cmbPedido.TabIndex = 6;
             // 
+            // Nmesa
+            // 
+            this.Nmesa.HeaderText = "Numero Mesa";
+            this.Nmesa.Name = "Nmesa";
+            // 
+            // valor_total
+            // 
+            this.valor_total.HeaderText = "Valor Total";
+            this.valor_total.Name = "valor_total";
+            this.valor_total.ReadOnly = true;
+            // 
+            // faltapagar
+            // 
+            this.faltapagar.HeaderText = "Falta Pagar";
+            this.faltapagar.Name = "faltapagar";
+            this.faltapagar.ReadOnly = true;
+            // 
+            // metedoPagamento
+            // 
+            this.metedoPagamento.HeaderText = "Metedo Pagamento";
+            this.metedoPagamento.Name = "metedoPagamento";
+            // 
             // Pagamento_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,11 +153,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistar);
             this.Controls.Add(this.cmbMetedoPagamento);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgPagamento);
             this.Name = "Pagamento_Form";
             this.Text = "Pagamento_Form";
             this.Load += new System.EventHandler(this.Pagamento_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPagamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +165,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgPagamento;
         private System.Windows.Forms.ComboBox cmbMetedoPagamento;
         private System.Windows.Forms.Button btnRegistar;
         private System.Windows.Forms.Label label1;
@@ -139,5 +173,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nmesa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faltapagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metedoPagamento;
     }
 }

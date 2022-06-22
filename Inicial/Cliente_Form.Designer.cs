@@ -192,6 +192,8 @@
             // 
             // dgCliente
             // 
+            this.dgCliente.AllowUserToAddRows = false;
+            this.dgCliente.AllowUserToDeleteRows = false;
             this.dgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -204,6 +206,7 @@
             this.cidade});
             this.dgCliente.Location = new System.Drawing.Point(12, 79);
             this.dgCliente.Name = "dgCliente";
+            this.dgCliente.ReadOnly = true;
             this.dgCliente.Size = new System.Drawing.Size(545, 206);
             this.dgCliente.TabIndex = 54;
             this.dgCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCliente_CellContentClick);
@@ -212,23 +215,27 @@
             // 
             this.id.HeaderText = "id";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
             // id_morada
             // 
             this.id_morada.HeaderText = "id_morada";
             this.id_morada.Name = "id_morada";
+            this.id_morada.ReadOnly = true;
             this.id_morada.Visible = false;
             // 
             // contribuinte
             // 
             this.contribuinte.HeaderText = "Contribuinte";
             this.contribuinte.Name = "contribuinte";
+            this.contribuinte.ReadOnly = true;
             // 
             // rua
             // 
             this.rua.HeaderText = "Rua";
             this.rua.Name = "rua";
+            this.rua.ReadOnly = true;
             this.rua.Visible = false;
             // 
             // nome
@@ -243,16 +250,19 @@
             // 
             this.telemovel.HeaderText = "Telemovel";
             this.telemovel.Name = "telemovel";
+            this.telemovel.ReadOnly = true;
             // 
             // cod_postal
             // 
             this.cod_postal.HeaderText = "Codigo Postal";
             this.cod_postal.Name = "cod_postal";
+            this.cod_postal.ReadOnly = true;
             // 
             // cidade
             // 
             this.cidade.HeaderText = "cidade";
             this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
             // 
             // lblID
             // 

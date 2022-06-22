@@ -21,38 +21,130 @@ namespace Inicial
 
         private void Pagamento_Form_Load(object sender, EventArgs e)
         {
-            Pedidos_cmb();
+
+            carregar_mesas();
+            List<MetodoPagamento> metodoPagamentos = restGest.MetodoPagamentoSet.ToList();
+
+            foreach (MetodoPagamento metodoPagamento in metodoPagamentos)
+            {
+                if (metodoPagamento.Ativo == true)
+                {
+                    cmbMetedoPagamento.Items.Add(metodoPagamento);
+                }
+
+            }
+
+            ler_dados();
         }
 
         private void btnRegistar_Click(object sender, EventArgs e)
         {
+            if (cmbPedido.SelectedItem != null && cmbMetedoPagamento.SelectedItem != null && txtValor.Text != "")
+            {
+               
+                decimal value = Convert.ToDecimal(txtValor.Text);
+                Pedido pedido = (Pedido)cmbPedido.SelectedItem;
+                MetodoPagamento metodoPagamento = (MetodoPagamento)cmbMetedoPagamento.SelectedItem;
+                Pagamento pagamento = new Pagamento();
+
+
+                if (pedido.ValorTotal >= value)
+                {
+
+                    pagamento.PedidoId = pedido.Id;
+                    pagamento.MetodoPagamentoId = metodoPagamento.Id;
+                    pagamento.Valor = value;
+
+                    restGest.Pagamento.Add(pagamento);
+                    restGest.SaveChanges();
+
+                }
+                else
+                {
+                    MessageBox.Show("Valor invalido");
+                }
+
+                ler_dados();
+                carregar_mesas();
+                limpar_txt();
+            }
+            else
+            {
+                MessageBox.Show("Insira valores");
+            }
+           
 
         }
 
-        public void Pedidos_cmb()
+        public void ler_dados()
         {
-            cmbPedido.Items.Clear();
+            dgPagamento.Rows.Clear();// limpa a tabela 
+            dgPagamento.Refresh();// da refresh a tabela
+            int i = 0;
+            string metedos;
+            decimal falta_pagar;
+            List<Pagamento> pagamentos = restGest.Pagamento.ToList();
             List<Pedido> pedidos = restGest.Pedido.ToList();
 
             foreach (var pedido in pedidos)
             {
-                cmbPedido.Items.Add(pedido.Id);
+                falta_pagar = 0;
+                metedos = "";
+                falta_pagar= pedido.ValorTotal;
+                foreach (var pagamento in pagamentos)
+                {
+                    if (pedido.Id == pagamento.PedidoId)
+                    {
+                        falta_pagar -= pagamento.Valor;
+                        metedos = metedos + " " + pagamento.MetodoPagamento;
+                    }
+                }
+
+                dgPagamento.Rows.Add();
+                dgPagamento.Rows[i].Cells["Nmesa"].Value = pedido.Id;
+                dgPagamento.Rows[i].Cells["valor_total"].Value = pedido.ValorTotal;
+                dgPagamento.Rows[i].Cells["faltapagar"].Value = falta_pagar;
+                dgPagamento.Rows[i].Cells["metedoPagamento"].Value = metedos;
+                i++;
             }
         }
 
-        public void MetodosPagamento_cmb()
+        public void carregar_mesas()
         {
-            cmbMetedoPagamento.Items.Clear();
-            List<MetodoPagamento> metodoPagamentos = restGest.MetodoPagamentoSet.ToList();
+            cmbPedido.Items.Clear();
+            decimal falta_pagar;
+            List<Pedido> pedidos = restGest.Pedido.ToList();
+            List<Pagamento> pagamentos = restGest.Pagamento.ToList();
 
-            foreach (var metodoPagamento in metodoPagamentos)
+            foreach (var pedido in pedidos)
             {
-                if (metodoPagamento.Ativo== true)
+                falta_pagar = 0;
+
+                falta_pagar = pedido.ValorTotal;
+                foreach (var pagamento in pagamentos)
                 {
-                    cmbMetedoPagamento.Items.Add(metodoPagamento.MetPagamento);
+                    if (pedido.Id == pagamento.PedidoId)
+                    {
+                        falta_pagar -= pagamento.Valor;
+
+                    }
+
+
+
                 }
-               
+                if (falta_pagar != 0)
+                {
+                    cmbPedido.Items.Add(pedido);
+                }
+
             }
+        }
+
+        public void limpar_txt()
+        {
+            cmbMetedoPagamento.SelectedIndex = -1;
+            cmbPedido.SelectedItem = "";
+            txtValor.Text = "";
         }
     }
 }

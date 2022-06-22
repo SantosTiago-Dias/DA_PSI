@@ -46,8 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.dgFuncionario = new System.Windows.Forms.DataGridView();
-            this.lblIdFunc = new System.Windows.Forms.Label();
-            this.lblIdMorada = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_Funcinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +56,8 @@
             this.cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblIdFunc = new System.Windows.Forms.Label();
+            this.lblIdMorada = new System.Windows.Forms.Label();
             this.btnFazerPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
             this.SuspendLayout();
@@ -213,6 +213,8 @@
             // 
             // dgFuncionario
             // 
+            this.dgFuncionario.AllowUserToAddRows = false;
+            this.dgFuncionario.AllowUserToDeleteRows = false;
             this.dgFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -227,37 +229,23 @@
             this.id_morada});
             this.dgFuncionario.Location = new System.Drawing.Point(12, 56);
             this.dgFuncionario.Name = "dgFuncionario";
+            this.dgFuncionario.ReadOnly = true;
             this.dgFuncionario.Size = new System.Drawing.Size(595, 206);
             this.dgFuncionario.TabIndex = 35;
             this.dgFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncionario_CellContentClick);
-            // 
-            // lblIdFunc
-            // 
-            this.lblIdFunc.AutoSize = true;
-            this.lblIdFunc.Location = new System.Drawing.Point(741, 22);
-            this.lblIdFunc.Name = "lblIdFunc";
-            this.lblIdFunc.Size = new System.Drawing.Size(0, 13);
-            this.lblIdFunc.TabIndex = 36;
-            this.lblIdFunc.Visible = false;
-            // 
-            // lblIdMorada
-            // 
-            this.lblIdMorada.Location = new System.Drawing.Point(979, 132);
-            this.lblIdMorada.Name = "lblIdMorada";
-            this.lblIdMorada.Size = new System.Drawing.Size(46, 17);
-            this.lblIdMorada.TabIndex = 37;
-            this.lblIdMorada.Visible = false;
             // 
             // ID
             // 
             this.ID.HeaderText = "Id";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // id_rest
             // 
             this.id_rest.HeaderText = "id_rest";
             this.id_rest.Name = "id_rest";
+            this.id_rest.ReadOnly = true;
             this.id_rest.Visible = false;
             // 
             // nome_Funcinario
@@ -309,7 +297,25 @@
             // 
             this.id_morada.HeaderText = "id_morada";
             this.id_morada.Name = "id_morada";
+            this.id_morada.ReadOnly = true;
             this.id_morada.Visible = false;
+            // 
+            // lblIdFunc
+            // 
+            this.lblIdFunc.AutoSize = true;
+            this.lblIdFunc.Location = new System.Drawing.Point(741, 22);
+            this.lblIdFunc.Name = "lblIdFunc";
+            this.lblIdFunc.Size = new System.Drawing.Size(0, 13);
+            this.lblIdFunc.TabIndex = 36;
+            this.lblIdFunc.Visible = false;
+            // 
+            // lblIdMorada
+            // 
+            this.lblIdMorada.Location = new System.Drawing.Point(979, 132);
+            this.lblIdMorada.Name = "lblIdMorada";
+            this.lblIdMorada.Size = new System.Drawing.Size(46, 17);
+            this.lblIdMorada.TabIndex = 37;
+            this.lblIdMorada.Visible = false;
             // 
             // btnFazerPedido
             // 
