@@ -115,7 +115,7 @@ namespace Inicial
                 pedido.EstadoId = 1;
                 restGest.Pedido.Add(pedido);
                 restGest.SaveChanges();
-
+                MessageBox.Show("O pedido foi recebido");
                 ler_dados();
             }
             else
@@ -131,6 +131,7 @@ namespace Inicial
         {
             dgPedido.Rows.Clear();// limpa a tabela 
             dgPedido.Refresh();// da refresh a tabela
+
             int i = 0;
             
             List<Pedido> pedidos = restGest.Pedido.ToList();
@@ -158,13 +159,110 @@ namespace Inicial
                     dgPedido.Rows[i].Cells["funcionario"].Value = res.Trabalhador.Nome;
                     dgPedido.Rows[i].Cells["pedido"].Value = valores_pedido;
                     dgPedido.Rows[i].Cells["valortotal"].Value = Convert.ToDecimal(res.ValorTotal);
-                    dgPedido.Rows[i].Cells["estado"].Value = res.Estado.State;
+
+                    //Recebido
+                    if (res.EstadoId == 1)
+                    {
+                        dgPedido.Rows[i].Cells["estado"].Value = res.Estado.State;
+                        dgPedido.Rows[i].Cells["Estado"].Style.BackColor = Color.Orange;
+                        dgPedido.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                    }
+                    //Em processo
+                    else if (res.EstadoId == 2)
+                    {
+                        dgPedido.Rows[i].Cells["estado"].Value = res.Estado.State;
+                        dgPedido.Rows[i].Cells["Estado"].Style.BackColor = Color.YellowGreen;
+                        dgPedido.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                    }
+                    //Concluido
+                    else if (res.EstadoId == 3)
+                    {
+                        dgPedido.Rows[i].Cells["estado"].Value = res.Estado.State;
+                        dgPedido.Rows[i].Cells["Estado"].Style.BackColor = Color.Green;
+                        dgPedido.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                    }
+                    //Cancelado
+                    else if (res.EstadoId == 4)
+                    {
+                        dgPedido.Rows[i].Cells["estado"].Value = res.Estado.State;
+                        dgPedido.Rows[i].Cells["Estado"].Style.BackColor = Color.DarkRed;
+                        dgPedido.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                    }
+
+
 
 
                     i++;
                 }
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int row = dgPedido.CurrentRow.Index;
+            if (row != null)
+            {
+                int id = Convert.ToInt32(dgPedido.Rows[row].Cells["nPedido"].Value);
+                string estado = dgPedido.Rows[row].Cells["estado"].Value.ToString();
+                Pedido pedido = restGest.Pedido.Find(id);
+                if (estado != "Concluido")
+                {
+                    DialogResult resposta = MessageBox.Show("Deseja eliminar o Pedido nº"+id+" ?", "Pergunta", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    if (resposta == DialogResult.Yes)
+                    {
+                        pedido.EstadoId = 4;
+                        MessageBox.Show("O pedido nº "+ id+" foi eliminado com sucesso");
+                        restGest.SaveChanges();
+                       
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("O pedido ja foi concluido");
+                }
+
+            }
+            ler_dados();
+        }
+
+        private void btnAvancar_Click(object sender, EventArgs e)
+        {
+            int row = dgPedido.CurrentRow.Index;
+            if (row != null)
+            {
+                int id = Convert.ToInt32(dgPedido.Rows[row].Cells["nPedido"].Value);
+                string estado= dgPedido.Rows[row].Cells["estado"].Value.ToString();
+                Pedido pedido = restGest.Pedido.Find(id);
+                if (estado != "Cancelado")
+                {
+                    if (estado == "Recebido")
+                    {
+                        pedido.EstadoId = 2;
+                        MessageBox.Show("O pedido esta em Processo");
+                    }
+                    else if (estado == "Em Processo")
+                    {
+                        pedido.EstadoId = 3;
+                        MessageBox.Show("O pedido foi Concluido com sucesso");
+                    }
+                    else if (estado == "Concluido")
+                    {
+                        MessageBox.Show("O pedido ja foi Concluido");
+                    }
+
+                    restGest.SaveChanges();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("O pedido foi cancelado");
+                }
+                   
+            }
+            ler_dados();
         }
     }
 }

@@ -85,6 +85,8 @@ namespace Inicial
 
         public void ler_dados() 
         {
+            dgvCategorias.Rows.Clear();// limpa a tabela 
+            dgvCategorias.Refresh();// da refresh a tabela
 
             int i = 0;
             // query para dar join das duas tabelas e as juntar os campos de ambas

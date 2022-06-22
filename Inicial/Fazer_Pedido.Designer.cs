@@ -54,6 +54,8 @@
             this.pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAvancar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,6 +234,8 @@
             // 
             // dgPedido
             // 
+            this.dgPedido.AllowUserToAddRows = false;
+            this.dgPedido.AllowUserToDeleteRows = false;
             this.dgPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nPedido,
@@ -242,6 +246,7 @@
             this.estado});
             this.dgPedido.Location = new System.Drawing.Point(12, 50);
             this.dgPedido.Name = "dgPedido";
+            this.dgPedido.ReadOnly = true;
             this.dgPedido.Size = new System.Drawing.Size(814, 305);
             this.dgPedido.TabIndex = 24;
             // 
@@ -276,11 +281,33 @@
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             // 
+            // btnAvancar
+            // 
+            this.btnAvancar.Location = new System.Drawing.Point(551, 402);
+            this.btnAvancar.Name = "btnAvancar";
+            this.btnAvancar.Size = new System.Drawing.Size(124, 23);
+            this.btnAvancar.TabIndex = 25;
+            this.btnAvancar.Text = "Proxima Faze";
+            this.btnAvancar.UseVisualStyleBackColor = true;
+            this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(702, 402);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(124, 23);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "Cancelar Pedido";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Fazer_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 450);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.dgPedido);
             this.Controls.Add(this.lblNomeFuncionario);
             this.Controls.Add(this.lblNomeRestaurante);
@@ -338,5 +365,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn valortotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Button btnAvancar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
