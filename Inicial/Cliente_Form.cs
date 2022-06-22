@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Inicial
 {
+
+   
     public partial class Cliente_Form : Form
-    {
+    { 
+        public static int id_cliente;//vai enviar o id do restaurante para o menu
         public RestGestContainer restGest;
 
         public Cliente_Form()
@@ -59,6 +62,7 @@ namespace Inicial
 
         public void limpar_dados()
         {
+            lblID.Text = null;
             txtCidade.Clear();
             txtCodPostal.Clear();
             txtContribuinte.Clear();
@@ -108,11 +112,12 @@ namespace Inicial
                     cliente.Nome = txtNome.Text;
                     cliente.Telemovel = telemovel;
                     cliente.NumContribuinte = contri;
-
+                    
                     restGest.SaveChanges();
                 }
                 ler_dados();
                 limpar_dados();
+                
 
             }
             else
@@ -166,5 +171,7 @@ namespace Inicial
             txtContribuinte.Text = dgCliente.Rows[row].Cells["contribuinte"].Value.ToString();
 
         }
+
+        
     }
 }

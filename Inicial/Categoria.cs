@@ -11,7 +11,7 @@ namespace Inicial
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +19,11 @@ namespace Inicial
         {
             this.ItemMenu = new HashSet<ItemMenu>();
         }
-    
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public bool Ativo { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemMenu> ItemMenu { get; set; }
 
@@ -31,5 +31,8 @@ namespace Inicial
         {
             return Nome;
         }
+
+    
+
     }
 }

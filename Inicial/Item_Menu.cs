@@ -25,7 +25,7 @@ namespace Inicial
 
         private void Item_Menu_Load(object sender, EventArgs e)
         {
-            Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id);
+            Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id_restaurante);
             lblRestaurante.Text = restaurante.Nome;
 
             List<Categoria> categoria = restGest.Categoria.ToList();
@@ -58,13 +58,14 @@ namespace Inicial
                        
 
                         ItemMenu itemMenu = new ItemMenu();
-                        Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id);
+                        Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id_restaurante);
                         itemMenu.Nome = txtNome.Text;
                         itemMenu.Ingredientes = txtIngredientes.Text;
                         itemMenu.Preco = valor;
                         itemMenu.Fotografia = Path.Combine(path, Path.GetFileName(lblFileName.Text));
                         itemMenu.CategoriaId = cat.Id;
                         itemMenu.Restaurante.Add(restaurante);
+                        itemMenu.Ativo = true;
                         restGest.ItemMenu.Add(itemMenu);
                         restGest.SaveChanges();
                     }
@@ -123,7 +124,7 @@ namespace Inicial
             dgItemMenu.Rows.Clear();// limpa a tabela 
             dgItemMenu.Refresh();// da refresh a tabela
             int i = 0;
-            Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id);
+            Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id_restaurante);
             //ir buscar o id do restaurante para depois comparar
             List<ItemMenu> itemmenu = restGest.ItemMenu.ToList();
             //foreach para percorrer os campos
@@ -181,7 +182,7 @@ namespace Inicial
                 {
                     int id = Convert.ToInt32(txtID.Text);
                     ItemMenu itemMenu = restGest.ItemMenu.Find(id);
-                    Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id);
+                    Restaurante restaurante = restGest.Restaurante.Find(Restaurante_From.id_restaurante);
                     itemMenu.Restaurante.Remove(restaurante);
                     restGest.ItemMenu.Remove(itemMenu);
                     restGest.SaveChanges();

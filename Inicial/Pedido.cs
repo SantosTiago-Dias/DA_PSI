@@ -22,7 +22,7 @@ namespace Inicial
         }
     
         public int Id { get; set; }
-        public int ValorTotal { get; set; }
+        public decimal ValorTotal { get; set; }
         public int ClienteId { get; set; }
         public int TrabalhadorId { get; set; }
         public int RestauranteId { get; set; }

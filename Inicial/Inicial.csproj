@@ -76,6 +76,12 @@
     <Compile Include="Estado.cs">
       <DependentUpon>RestGest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Fazer_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fazer_Pedido.Designer.cs">
+      <DependentUpon>Fazer_Pedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente_Form.resx">
       <DependentUpon>Cliente_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fazer_Pedido.resx">
+      <DependentUpon>Fazer_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

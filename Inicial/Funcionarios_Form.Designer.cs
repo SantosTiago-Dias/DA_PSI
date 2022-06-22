@@ -45,29 +45,26 @@
             this.txtPosicaoFunc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.dgFuncionario = new System.Windows.Forms.DataGridView();
+            this.lblIdFunc = new System.Windows.Forms.Label();
+            this.lblIdMorada = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_rest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_Funcinario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tele = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_restaurante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblIdFunc = new System.Windows.Forms.Label();
-            this.lblIdMorada = new System.Windows.Forms.Label();
-            this.cmbRest = new System.Windows.Forms.ComboBox();
+            this.btnFazerPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(797, 296);
+            this.btnEliminar.Location = new System.Drawing.Point(668, 291);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(162, 23);
             this.btnEliminar.TabIndex = 24;
@@ -77,7 +74,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(797, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(668, 325);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(162, 23);
             this.btnCancelar.TabIndex = 22;
@@ -88,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(776, 55);
+            this.label4.Location = new System.Drawing.Point(647, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 21;
@@ -97,7 +94,7 @@
             // 
             // txtNomeFunc
             // 
-            this.txtNomeFunc.Location = new System.Drawing.Point(873, 55);
+            this.txtNomeFunc.Location = new System.Drawing.Point(744, 50);
             this.txtNomeFunc.Name = "txtNomeFunc";
             this.txtNomeFunc.Size = new System.Drawing.Size(100, 20);
             this.txtNomeFunc.TabIndex = 20;
@@ -105,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(808, 107);
+            this.label3.Location = new System.Drawing.Point(679, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 19;
@@ -115,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(840, 136);
+            this.label2.Location = new System.Drawing.Point(711, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 18;
@@ -125,7 +122,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(818, 88);
+            this.label1.Location = new System.Drawing.Point(689, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 17;
@@ -134,7 +131,7 @@
             // 
             // btnaddFunc
             // 
-            this.btnaddFunc.Location = new System.Drawing.Point(797, 267);
+            this.btnaddFunc.Location = new System.Drawing.Point(668, 262);
             this.btnaddFunc.Name = "btnaddFunc";
             this.btnaddFunc.Size = new System.Drawing.Size(162, 23);
             this.btnaddFunc.TabIndex = 16;
@@ -144,21 +141,21 @@
             // 
             // txtCodPostalFunc
             // 
-            this.txtCodPostalFunc.Location = new System.Drawing.Point(873, 107);
+            this.txtCodPostalFunc.Location = new System.Drawing.Point(744, 102);
             this.txtCodPostalFunc.Name = "txtCodPostalFunc";
             this.txtCodPostalFunc.Size = new System.Drawing.Size(100, 20);
             this.txtCodPostalFunc.TabIndex = 15;
             // 
             // txtRuaFunc
             // 
-            this.txtRuaFunc.Location = new System.Drawing.Point(873, 133);
+            this.txtRuaFunc.Location = new System.Drawing.Point(744, 128);
             this.txtRuaFunc.Name = "txtRuaFunc";
             this.txtRuaFunc.Size = new System.Drawing.Size(100, 20);
             this.txtRuaFunc.TabIndex = 14;
             // 
             // txtTelemovel
             // 
-            this.txtTelemovel.Location = new System.Drawing.Point(873, 81);
+            this.txtTelemovel.Location = new System.Drawing.Point(744, 76);
             this.txtTelemovel.Name = "txtTelemovel";
             this.txtTelemovel.Size = new System.Drawing.Size(100, 20);
             this.txtTelemovel.TabIndex = 13;
@@ -166,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(830, 166);
+            this.label5.Location = new System.Drawing.Point(701, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 26;
@@ -175,7 +172,7 @@
             // 
             // txtCidadeFunc
             // 
-            this.txtCidadeFunc.Location = new System.Drawing.Point(873, 159);
+            this.txtCidadeFunc.Location = new System.Drawing.Point(744, 154);
             this.txtCidadeFunc.Name = "txtCidadeFunc";
             this.txtCidadeFunc.Size = new System.Drawing.Size(100, 20);
             this.txtCidadeFunc.TabIndex = 25;
@@ -183,7 +180,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(822, 218);
+            this.label6.Location = new System.Drawing.Point(693, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 30;
@@ -192,7 +189,7 @@
             // 
             // txtPosicaoFunc
             // 
-            this.txtPosicaoFunc.Location = new System.Drawing.Point(873, 211);
+            this.txtPosicaoFunc.Location = new System.Drawing.Point(744, 206);
             this.txtPosicaoFunc.Name = "txtPosicaoFunc";
             this.txtPosicaoFunc.Size = new System.Drawing.Size(100, 20);
             this.txtPosicaoFunc.TabIndex = 29;
@@ -200,7 +197,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(830, 188);
+            this.label7.Location = new System.Drawing.Point(701, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 28;
@@ -209,28 +206,10 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(873, 185);
+            this.txtSalario.Location = new System.Drawing.Point(744, 180);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(100, 20);
             this.txtSalario.TabIndex = 27;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(794, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Restaurante";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblId
-            // 
-            this.lblId.Location = new System.Drawing.Point(979, 245);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(46, 17);
-            this.lblId.TabIndex = 34;
-            this.lblId.Visible = false;
             // 
             // dgFuncionario
             // 
@@ -242,16 +221,32 @@
             this.tele,
             this.posicao,
             this.salario,
-            this.nome_restaurante,
             this.cidade,
             this.cod_Postal,
             this.rua,
             this.id_morada});
             this.dgFuncionario.Location = new System.Drawing.Point(12, 56);
             this.dgFuncionario.Name = "dgFuncionario";
-            this.dgFuncionario.Size = new System.Drawing.Size(743, 206);
+            this.dgFuncionario.Size = new System.Drawing.Size(595, 206);
             this.dgFuncionario.TabIndex = 35;
             this.dgFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncionario_CellContentClick);
+            // 
+            // lblIdFunc
+            // 
+            this.lblIdFunc.AutoSize = true;
+            this.lblIdFunc.Location = new System.Drawing.Point(741, 22);
+            this.lblIdFunc.Name = "lblIdFunc";
+            this.lblIdFunc.Size = new System.Drawing.Size(0, 13);
+            this.lblIdFunc.TabIndex = 36;
+            this.lblIdFunc.Visible = false;
+            // 
+            // lblIdMorada
+            // 
+            this.lblIdMorada.Location = new System.Drawing.Point(979, 132);
+            this.lblIdMorada.Name = "lblIdMorada";
+            this.lblIdMorada.Size = new System.Drawing.Size(46, 17);
+            this.lblIdMorada.TabIndex = 37;
+            this.lblIdMorada.Visible = false;
             // 
             // ID
             // 
@@ -289,13 +284,6 @@
             this.salario.Name = "salario";
             this.salario.ReadOnly = true;
             // 
-            // nome_restaurante
-            // 
-            this.nome_restaurante.HeaderText = "Nome Restaurante";
-            this.nome_restaurante.Name = "nome_restaurante";
-            this.nome_restaurante.ReadOnly = true;
-            this.nome_restaurante.Width = 150;
-            // 
             // cidade
             // 
             this.cidade.HeaderText = "Cidade";
@@ -323,43 +311,25 @@
             this.id_morada.Name = "id_morada";
             this.id_morada.Visible = false;
             // 
-            // lblIdFunc
+            // btnFazerPedido
             // 
-            this.lblIdFunc.AutoSize = true;
-            this.lblIdFunc.Location = new System.Drawing.Point(870, 27);
-            this.lblIdFunc.Name = "lblIdFunc";
-            this.lblIdFunc.Size = new System.Drawing.Size(0, 13);
-            this.lblIdFunc.TabIndex = 36;
-            this.lblIdFunc.Visible = false;
-            // 
-            // lblIdMorada
-            // 
-            this.lblIdMorada.Location = new System.Drawing.Point(979, 132);
-            this.lblIdMorada.Name = "lblIdMorada";
-            this.lblIdMorada.Size = new System.Drawing.Size(46, 17);
-            this.lblIdMorada.TabIndex = 37;
-            this.lblIdMorada.Visible = false;
-            // 
-            // cmbRest
-            // 
-            this.cmbRest.FormattingEnabled = true;
-            this.cmbRest.Location = new System.Drawing.Point(873, 238);
-            this.cmbRest.Name = "cmbRest";
-            this.cmbRest.Size = new System.Drawing.Size(100, 21);
-            this.cmbRest.TabIndex = 38;
-            this.cmbRest.SelectedIndexChanged += new System.EventHandler(this.cmbRest_SelectedIndexChanged);
+            this.btnFazerPedido.Location = new System.Drawing.Point(532, 325);
+            this.btnFazerPedido.Name = "btnFazerPedido";
+            this.btnFazerPedido.Size = new System.Drawing.Size(102, 23);
+            this.btnFazerPedido.TabIndex = 38;
+            this.btnFazerPedido.Text = "Fazer Pedido";
+            this.btnFazerPedido.UseVisualStyleBackColor = true;
+            this.btnFazerPedido.Click += new System.EventHandler(this.btnFazerPedido_Click);
             // 
             // Funcionarios_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 361);
-            this.Controls.Add(this.cmbRest);
+            this.ClientSize = new System.Drawing.Size(869, 363);
+            this.Controls.Add(this.btnFazerPedido);
             this.Controls.Add(this.lblIdMorada);
             this.Controls.Add(this.lblIdFunc);
             this.Controls.Add(this.dgFuncionario);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPosicaoFunc);
             this.Controls.Add(this.label7);
@@ -405,8 +375,6 @@
         private System.Windows.Forms.TextBox txtPosicaoFunc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSalario;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.DataGridView dgFuncionario;
         private System.Windows.Forms.Label lblIdFunc;
         private System.Windows.Forms.Label lblIdMorada;
@@ -416,11 +384,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tele;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicao;
         private System.Windows.Forms.DataGridViewTextBoxColumn salario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_restaurante;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_Postal;
         private System.Windows.Forms.DataGridViewTextBoxColumn rua;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_morada;
-        private System.Windows.Forms.ComboBox cmbRest;
+        private System.Windows.Forms.Button btnFazerPedido;
     }
 }

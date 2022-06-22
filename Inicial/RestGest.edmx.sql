@@ -163,7 +163,7 @@ GO
 -- Creating table 'Pedido'
 CREATE TABLE [dbo].[Pedido] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ValorTotal] int  NOT NULL,
+    [ValorTotal] decimal(18,0)  NOT NULL,
     [ClienteId] int  NOT NULL,
     [TrabalhadorId] int  NOT NULL,
     [RestauranteId] int  NOT NULL,

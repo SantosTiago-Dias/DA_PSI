@@ -13,6 +13,8 @@ namespace Inicial
     public partial class Funcionarios_Form : Form
     {
         public RestGestContainer restGest;
+        public static int restaurante_id;
+        public static int funcionario_id;
         public Funcionarios_Form()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace Inicial
                     Trabalhador trabalhador = new Trabalhador();
                     trabalhador.Nome = txtNomeFunc.Text;
                     trabalhador.Posicao = txtPosicaoFunc.Text;
-                    trabalhador.RestauranteId = Convert.ToInt32(lblId.Text);
+                    trabalhador.RestauranteId = Restaurante_From.id_restaurante;
                     trabalhador.Telemovel = Convert.ToInt32(txtTelemovel.Text);
                     trabalhador.Salario = Convert.ToDecimal(salario.Replace('.', ','));
                     trabalhador.MoradaId = morada.Id;
@@ -60,7 +62,7 @@ namespace Inicial
                     morada.Cod_Postal = txtCodPostalFunc.Text;
                     trabalhador.Nome = txtNomeFunc.Text;
                     trabalhador.Posicao = txtPosicaoFunc.Text;
-                    trabalhador.RestauranteId = Convert.ToInt32(lblId.Text);
+                    trabalhador.RestauranteId = Restaurante_From.id_restaurante;
                     trabalhador.Telemovel = Convert.ToInt32(txtTelemovel.Text);
                     trabalhador.Salario = Convert.ToDecimal(salario.Replace('.', ','));
                     
@@ -82,14 +84,6 @@ namespace Inicial
         private void Funcionarios_Form_Load(object sender, EventArgs e)
         {
             
-            List<Restaurante> restaurante = restGest.Restaurante.ToList();
-
-            foreach (var item in restaurante)
-            {
-                cmbRest.Items.Add(item.Nome);
-            }
-            cmbRest.SelectedIndex = -1;
-            //lblId.Text = id_restaurante.ToString();
             ler_dados();
         }
 
@@ -103,11 +97,11 @@ namespace Inicial
             txtTelemovel.Text = dgFuncionario.Rows[row].Cells["tele"].Value.ToString();
             txtPosicaoFunc.Text = dgFuncionario.Rows[row].Cells["posicao"].Value.ToString();
             txtSalario.Text= dgFuncionario.Rows[row].Cells["salario"].Value.ToString();
-            cmbRest.SelectedItem= dgFuncionario.Rows[row].Cells["nome_restaurante"].Value.ToString();
+          
             txtCidadeFunc.Text = dgFuncionario.Rows[row].Cells["cidade"].Value.ToString();
             txtCodPostalFunc.Text= dgFuncionario.Rows[row].Cells["cod_Postal"].Value.ToString();
             txtRuaFunc.Text = dgFuncionario.Rows[row].Cells["rua"].Value.ToString();
-            lblId.Text= dgFuncionario.Rows[row].Cells["id_Rest"].Value.ToString();
+            
             lblIdMorada.Text= dgFuncionario.Rows[row].Cells["id_morada"].Value.ToString();
         }
 
@@ -122,29 +116,29 @@ namespace Inicial
             //foreach para percorrer os campos
             foreach (var res in trabalhadores)
             {
-                dgFuncionario.Rows.Add();
-                dgFuncionario.Rows[i].Cells["ID"].Value = res.Id;
-                dgFuncionario.Rows[i].Cells["nome_Funcinario"].Value = res.Nome;
-                dgFuncionario.Rows[i].Cells["tele"].Value = res.Telemovel;
-                dgFuncionario.Rows[i].Cells["posicao"].Value = res.Posicao;
-                dgFuncionario.Rows[i].Cells["salario"].Value = res.Salario;
-                dgFuncionario.Rows[i].Cells["nome_restaurante"].Value = res.Restaurante.Nome;
-                dgFuncionario.Rows[i].Cells["cidade"].Value = res.Morada.Cidade;
-                dgFuncionario.Rows[i].Cells["cod_Postal"].Value = res.Morada.Cod_Postal;
-                dgFuncionario.Rows[i].Cells["rua"].Value = res.Morada.Rua;
-                dgFuncionario.Rows[i].Cells["id_Rest"].Value = res.RestauranteId;
-                dgFuncionario.Rows[i].Cells["id_morada"].Value = res.MoradaId;
+                if(res.RestauranteId== Restaurante_From.id_restaurante)
+                {
+                    dgFuncionario.Rows.Add();
+                    dgFuncionario.Rows[i].Cells["ID"].Value = res.Id;
+                    dgFuncionario.Rows[i].Cells["nome_Funcinario"].Value = res.Nome;
+                    dgFuncionario.Rows[i].Cells["tele"].Value = res.Telemovel;
+                    dgFuncionario.Rows[i].Cells["posicao"].Value = res.Posicao;
+                    dgFuncionario.Rows[i].Cells["salario"].Value = res.Salario;
+                    dgFuncionario.Rows[i].Cells["cidade"].Value = res.Morada.Cidade;
+                    dgFuncionario.Rows[i].Cells["cod_Postal"].Value = res.Morada.Cod_Postal;
+                    dgFuncionario.Rows[i].Cells["rua"].Value = res.Morada.Rua;
+                    dgFuncionario.Rows[i].Cells["id_Rest"].Value = res.RestauranteId;
+                    dgFuncionario.Rows[i].Cells["id_morada"].Value = res.MoradaId;
+                    i++;
+                }
+                
 
-                i++;
+               
             }
 
         }
 
-        private void cmbRest_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lblId.Text = (cmbRest.SelectedIndex+1).ToString();
-            
-        }
+        
          
         private void limpar_txt()
         {
@@ -155,10 +149,10 @@ namespace Inicial
             txtRuaFunc.Clear();
             txtSalario.Clear();
             txtTelemovel.Clear();
-            lblId.Text = "";
+           
             lblIdFunc.Text = "";
             lblIdMorada.Text = "";
-            cmbRest.SelectedIndex = -1;
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -186,6 +180,18 @@ namespace Inicial
                     ler_dados();
                 }
             }
+        }
+
+        private void btnFazerPedido_Click(object sender, EventArgs e)
+        {
+            if (lblIdFunc.Text!="")
+            {
+                funcionario_id = Convert.ToInt32(lblIdFunc.Text);
+                restaurante_id = Convert.ToInt32(Restaurante_From.id_restaurante);
+                Fazer_Pedido fazer_Pedido = new Fazer_Pedido();
+                fazer_Pedido.Show();
+            }
+            
         }
     }
 }
